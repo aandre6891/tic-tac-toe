@@ -1,6 +1,6 @@
 class Move {
   constructor() {
-    this.movesCounter = 1;
+    this.movesCounter = 0;
     this.movesList = [];
   }
 

@@ -23,4 +23,3 @@ describe("Move", () => {
     expect(move.movesList).toEqual([{player: "player1", move: 1}])
   })
 });
-
