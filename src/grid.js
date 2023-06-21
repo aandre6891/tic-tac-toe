@@ -21,9 +21,19 @@ class Grid {
     console.log(this.gridLine);
     console.log(this.square7 + this.square8 + this.square9);
   }
+
+  printReferenceGrid() {
+    let squareNum = 0;
+    console.log(` ${squareNum + 1} | ${squareNum + 2} | ${squareNum + 3} `);
+    console.log(this.gridLine);
+    console.log(` ${squareNum + 4} | ${squareNum + 5} | ${squareNum + 6} `);
+    console.log(this.gridLine);
+    console.log(` ${squareNum + 7} | ${squareNum + 8} | ${squareNum + 9} `);
+  }
 }
 
 const grid = new Grid();
 grid.printGrid();
+grid.printReferenceGrid();
 
 module.exports = Grid;
