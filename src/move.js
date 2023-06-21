@@ -1,7 +1,7 @@
 class Move {
   constructor() {
     this.movesCounter = 1;
-    this.moves = [];
+    this.movesList = [];
   }
 
   addMove(player, move) {
@@ -9,7 +9,7 @@ class Move {
       player: player,
       move: move,
     }
-    this.moves.push(playerMove);
+    this.movesList.push(playerMove);
     this.movesCounter++;
   }
 }

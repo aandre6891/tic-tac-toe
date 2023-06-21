@@ -8,13 +8,19 @@ describe("Move", () => {
 
   test("initially the array of moves is empty", () => {
     const move = new Move();
-    expect(move.moves).toEqual([]);
+    expect(move.movesList).toEqual([]);
   })
 
-  test("when you play a move the number of moves increases", () => {
+  test("when you make a move the number of moves increases", () => {
     const move = new Move();
     move.addMove();
     expect(move.movesCounter).toBe(2);
   });
+
+  test("when you make a move the array should include the move of the player", () => {
+    const move = new Move();
+    move.addMove("player1", 1);
+    expect(move.movesList).toEqual([{player: "player1", move: 1}])
+  })
 });
 
