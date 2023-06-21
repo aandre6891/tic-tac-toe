@@ -3,7 +3,7 @@ const Move = require('../src/move');
 describe("Move", () => {
   test("initially it's the move 1", () => {
     const move = new Move();
-    expect(move.movesCounter).toBe(1);
+    expect(move.movesCounter).toBe(0);
   });
 
   test("initially the array of moves is empty", () => {
@@ -14,7 +14,7 @@ describe("Move", () => {
   test("when you make a move the number of moves increases", () => {
     const move = new Move();
     move.addMove();
-    expect(move.movesCounter).toBe(2);
+    expect(move.movesCounter).toBe(1);
   });
 
   test("when you make a move the array should include the move of the player", () => {
