@@ -4,11 +4,11 @@ class Player {
     this.player2 = "";
   }
 
-  setPlayer1(player1) {
+  setPlayer1Name(player1) {
     this.player1 = player1;
   }
 
-  setPlayer2(player2) {
+  setPlayer2Name(player2) {
     this.player2 = player2;
   }
 }
