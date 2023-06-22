@@ -33,14 +33,14 @@ describe("Round", () => {
   test("player1WinChecker should return true and player2WinChecker should return true", () => {
     const mockMove = jest.fn().mockImplementation(() => ({
       movesList: [
-        { player: "Player1", move: "4" },
-        { player: "Player2", move: "9" },
+        { player: "Player1", move: "4" }, // winning combination Player1
+        { player: "Player2", move: "9" },  // winning combination Player2
         { player: "Player1", move: "2" },
-        { player: "Player2", move: "3" },
-        { player: "Player1", move: "1" },
+        { player: "Player2", move: "3" },  // winning combination Player2
+        { player: "Player1", move: "1" }, // winning combination Player1
         { player: "Player2", move: "5" },
-        { player: "Player1", move: "7" },
-        { player: "Player2", move: "6" },
+        { player: "Player1", move: "7" }, // winning combination Player1
+        { player: "Player2", move: "6" },  // winning combination Player2
         { player: "Player1", move: "8" },
       ],
     }));
@@ -51,6 +51,5 @@ describe("Round", () => {
     expect(response1).toBe(true);
     const response2 = round.player2WinChecker();
     expect(response2).toBe(true);
-  
   });
 });
