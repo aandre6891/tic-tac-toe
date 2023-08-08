@@ -5,7 +5,7 @@ const Round = require("../src/round");
     expect(round.round).toBe(0);
   });
   
-  test('should display the correct message', () => {
+  test('should display the correct message', (done) => {
     const rlMock = {
       question: jest.fn(),
       close: jest.fn(),
@@ -14,6 +14,7 @@ const Round = require("../src/round");
     round.rl = rlMock;
     round.playRound();
     expect(rlMock.question).toHaveBeenCalledWith("Player1, make your move: ", expect.any(Function));
+    done();
   });
   
   test("player1WinChecker should return true and player2WinChecker should return false", () => {
