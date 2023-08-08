@@ -43,7 +43,7 @@ npm install
 Once the dependencies are installed, you can start the game by running the following command:
 
 ```sh
-node game.js
+node src/game.js
 ```
 
 Follow the on-screen prompts to make your moves and play Tic Tac Toe! This game is made to be played in the terminal.
