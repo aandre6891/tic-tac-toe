@@ -12,8 +12,12 @@ describe("Move", () => {
   })
 
   test("when you make a move the number of moves increases", () => {
-    const move = new Move();
-    move.addMove();
+    const mockRound = {
+      player1WinChecker: jest.fn(() => false),
+      player2WinChecker: jest.fn(() => false),
+    }
+    const move = new Move(mockRound);
+    move.addMove("Player1", 1);
     expect(move.movesCounter).toBe(1);
   });
 

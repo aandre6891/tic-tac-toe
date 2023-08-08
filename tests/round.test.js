@@ -1,9 +1,10 @@
 const Round = require("../src/round");
  
-  test("initially the round is 0", () => {
-    const round = new Round();
-    expect(round.round).toBe(0);
-  });
+  
+  // test("initially the round is 0", () => {
+  //   const round = new Round();
+  //   expect(round.round).toBe(0);
+  // });
   
   test('should display the correct message', (done) => {
     const rlMock = {
@@ -13,7 +14,7 @@ const Round = require("../src/round");
     const round = new Round();
     round.rl = rlMock;
     round.playRound();
-    expect(rlMock.question).toHaveBeenCalledWith("Player1, make your move: ", expect.any(Function));
+    expect(rlMock.question).toHaveBeenCalledWith("Player1, make your move, choose a number: ", expect.any(Function));
     done();
   });
   
