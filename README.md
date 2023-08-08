@@ -1,7 +1,3 @@
-Certainly, here's a comprehensive README file for the Tic Tac Toe game software you've developed:
-
----
-
 # Tic Tac Toe Game
 
 Welcome to the Tic Tac Toe Game project! This README provides instructions on how to clone the project, install dependencies, and start playing the game. Additionally, it covers the project structure, game rules, and how the different components interact.
