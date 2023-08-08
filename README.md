@@ -5,13 +5,12 @@ Welcome to the Tic Tac Toe Game project! This README provides instructions on ho
 ## Table of Contents
 
 - [Getting Started](#getting-started)
-  - [Cloning the Repository](#cloning-the-repository)
-  - [Installing Dependencies](#installing-dependencies)
-  - [Playing the Game](#playing-the-game)
+- [Cloning the Repository](#cloning-the-repository)
+- [Installing Dependencies](#installing-dependencies)
+- [Playing the Game](#playing-the-game)
 - [Project Structure](#project-structure)
 - [Game Rules](#game-rules)
 - [Contributions](#contributions)
-- [License](#license)
 
 ## Getting Started
 
@@ -20,10 +19,8 @@ Welcome to the Tic Tac Toe Game project! This README provides instructions on ho
 To get started, clone the repository to your local machine using the following command:
 
 ```sh
-git clone https://github.com/YOUR_USERNAME/tic-tac-toe.git
+git clone https://github.com/aandre6891/tic-tac-toe
 ```
-
-Replace `YOUR_USERNAME` with your GitHub username.
 
 ### Installing Dependencies
 
@@ -49,7 +46,7 @@ Once the dependencies are installed, you can start the game by running the follo
 node game.js
 ```
 
-Follow the on-screen prompts to make your moves and play Tic Tac Toe!
+Follow the on-screen prompts to make your moves and play Tic Tac Toe! This game is made to be played in the terminal.
 
 ## Project Structure
 
@@ -58,7 +55,7 @@ The project consists of several JavaScript files, each responsible for different
 - `game.js`: The main script that initializes the game, manages player interactions, and orchestrates rounds.
 - `grid.js`: Defines the `Grid` class for displaying the game board and handling player moves.
 - `move.js`: Contains the `Move` class, which tracks player moves and updates the game board.
-- `player.js`: Defines the `Player` class to set and manage player names.
+- `player.js`: Defines the `Player` class to set and manage players.
 - `round.js`: Implements the `Round` class that handles player turns, validates winning conditions, and displays results.
 - `winningSequences.js`: Contains the possible winning sequences on the game board.
 
@@ -72,10 +69,6 @@ The project consists of several JavaScript files, each responsible for different
 ## Contributions
 
 Contributions to the project are welcome! Feel free to submit issues or pull requests to suggest improvements or report problems.
-
-## License
-
-This project is licensed under the [MIT License](LICENSE).
 
 ---
 
