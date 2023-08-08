@@ -15,29 +15,23 @@ class Round {
   }
 
   playRound() {
-    if (this.move.movesCounter < 9) {
-      rl.question("Player 1, make your move: ", (playerInput) => {
-        console.log("Input dell'utente:", playerInput);
-        this.move.addMove("Player1", playerInput);
-        if (this.move.movesCounter === 9 || this.player1WinChecker() === true) {
-          this.round++;
-          this.displayResult();
-          rl.close();
-        } else {
-          rl.question("Player 2, make your move: ", (playerInput) => {
-            console.log("Input dell'utente:", playerInput);
-            this.move.addMove("Player2", playerInput);
-            if (this.player2WinChecker() === true) {
-              this.round++;
-              this.displayResult();
-              rl.close();
-            } else {
-              this.playRound();
-            }
-          });
-        }
-      });
-    }
+    if (this.move.movesCounter >= 9) return;
+    // determine which player's turn it is
+    const player = this.move.movesCounter % 2 === 0 ? "Player1" : "Player2";
+    // ask the player to make a move
+    rl.question(`${player}, make your move: `, (playerInput) => {
+      console.log("Player's input:", playerInput);
+      // add the player's move to the game board
+      this.move.addMove(player, playerInput);
+      // if the game is over, display the result and close the readline interface
+      if (this.move.movesCounter === 9 || this.player1WinChecker() || this.player2WinChecker()) {
+        this.round++;
+        this.displayResult();
+        rl.close();
+      } else {
+        this.playRound();
+      }
+    });
   }
 
   player1WinChecker() {
@@ -49,10 +43,10 @@ class Round {
         player1Moves.includes(number)
       );
       if (isWinningSequence) {
-        return true;
+        return "Player 1 wins!";
       }
     }
-    return false;
+    return "";
   }
 
   player2WinChecker() {
@@ -64,10 +58,10 @@ class Round {
         player2Moves.includes(number)
       );
       if (isWinningSequence) {
-        return true;
+        return "Player 2 wins!";
       }
     }
-    return false;
+    return "";
   }
 
   displayResult() {
@@ -76,8 +70,5 @@ class Round {
     console.log("Round:", this.round);
   }
 }
-
-const round = new Round();
-round.playRound();
 
 module.exports = Round;
