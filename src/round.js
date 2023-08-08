@@ -43,10 +43,9 @@ class Round {
         player1Moves.includes(number)
       );
       if (isWinningSequence) {
-        return "Player 1 wins!";
+        return true;
       }
     }
-    return "";
   }
 
   player2WinChecker() {
@@ -58,16 +57,22 @@ class Round {
         player2Moves.includes(number)
       );
       if (isWinningSequence) {
-        return "Player 2 wins!";
+        return true;
       }
     }
-    return "";
   }
 
   displayResult() {
-    console.log(this.player1WinChecker());
-    console.log(this.player2WinChecker());
-    console.log("Round:", this.round);
+    if(!this.player1WinChecker() && !this.player2WinChecker()) {
+      console.log("It's a draw!");
+    } else if(this.player1WinChecker() && !this.player2WinChecker()) {
+      console.log("Player 1 wins!");
+      console.log("Round:", this.round);
+    } else if(!this.player1WinChecker() && this.player2WinChecker()) {
+      console.log("Player 2 wins!");
+      console.log(this.player2WinChecker())
+      console.log("Round:", this.round);
+    }
   }
 }
 
