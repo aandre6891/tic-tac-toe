@@ -2,13 +2,13 @@ const Move = require("./move");
 const readline = require("readline");
 const winningSequences = require("./winningSequences.js");
 
-const rl = readline.createInterface({
-  input: process.stdin,
-  output: process.stdout,
-});
 
 class Round {
   constructor() {
+    this.rl = readline.createInterface({
+      input: process.stdin,
+      output: process.stdout,
+    });
     this.round = 0;
     this.winningSequences = winningSequences;
     this.move = new Move();
@@ -19,7 +19,7 @@ class Round {
     // determine which player's turn it is
     const player = this.move.movesCounter % 2 === 0 ? "Player1" : "Player2";
     // ask the player to make a move
-    rl.question(`${player}, make your move: `, (playerInput) => {
+    this.rl.question(`${player}, make your move: `, (playerInput) => {
       console.log("Player's input:", playerInput);
       // add the player's move to the game board
       this.move.addMove(player, playerInput);
@@ -27,7 +27,7 @@ class Round {
       if (this.move.movesCounter === 9 || this.player1WinChecker() || this.player2WinChecker()) {
         this.round++;
         this.displayResult();
-        rl.close();
+        this.rl.close();
       } else {
         this.playRound();
       }
